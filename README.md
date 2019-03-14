@@ -49,5 +49,5 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 
 #### 学习大纲
 
-- 00.[Python优缺点](/src/lesson00.synopsis/synopsis.md)
-- 01.[Python基础语法](/src/lesson01.basicGrammar/basicGrammar.md)
+1. ##### [Python优缺点](/src/lesson00.synopsis/synopsis.md)
+2. ##### [Python基础语法](/src/lesson01.basicGrammar/basicGrammar.md)
