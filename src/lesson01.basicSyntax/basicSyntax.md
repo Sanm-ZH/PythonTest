@@ -1,3 +1,6 @@
+**Python2 | [Python3](/src/lesson01.basicSyntax/basicSyntax3.md)**
+
+---
 ### Python 基础语法
 Python 语言与 Perl，C 和 Java 等语言有许多相似之处。但是，也存在一些差异。
 
