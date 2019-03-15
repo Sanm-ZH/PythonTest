@@ -335,3 +335,133 @@ string、list 和 tuple 都属于 sequence（序列）。
 - 3、注意构造包含 0 或 1 个元素的元组的特殊语法规则。
 - 4、元组也可以使用+操作符进行拼接。
 ---
+### Set（集合）
+集合（set）是由一个或数个形态各异的大小整体组成的，构成集合的事物或对象称作元素或是成员。
+
+基本功能是进行成员关系测试和删除重复元素。
+
+可以使用大括号 `{ }` 或者 `set()` 函数创建集合，注意：创建一个空集合必须用 `set()` 而不是 `{ }`，因为 { } 是用来创建一个空字典。
+
+创建格式：
+```
+parame = {value01,value02,...}
+或者
+set(value)
+```
+案例：
+```python
+#!/usr/bin/python3
+ 
+student = {'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}
+ 
+print(student)   # 输出集合，重复的元素被自动去掉
+ 
+# 成员测试
+if 'Rose' in student :
+    print('Rose 在集合中')
+else :
+    print('Rose 不在集合中')
+ 
+ 
+# set可以进行集合运算
+a = set('abracadabra')
+b = set('alacazam')
+ 
+print(a)
+ 
+print(a - b)     # a 和 b 的差集
+ 
+print(a | b)     # a 和 b 的并集
+ 
+print(a & b)     # a 和 b 的交集
+ 
+print(a ^ b)     # a 和 b 中不同时存在的元素
+```
+以上实例输出结果：
+```
+{'Mary', 'Jim', 'Rose', 'Jack', 'Tom'}
+Rose 在集合中
+{'b', 'a', 'c', 'r', 'd'}
+{'b', 'd', 'r'}
+{'l', 'r', 'a', 'c', 'z', 'm', 'b', 'd'}
+{'a', 'c'}
+{'l', 'r', 'z', 'm', 'b', 'd'}
+```
+---
+### Dictionary（字典）
+字典（dictionary）是Python中另一个非常有用的内置数据类型。
+
+列表是有序的对象集合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。
+
+字典是一种映射类型，字典用 `{ }` 标识，它是一个无序的 **键(key)** : **值(value)** 的集合。
+
+键(key)必须使用不可变类型。
+
+在同一个字典中，键(key)必须是唯一的。
+```python
+#!/usr/bin/python3
+ 
+dict = {}
+dict['one'] = "1 - 张三"
+dict[2]     = "2 - 李四"
+ 
+tinydict = {'name': 'sanm-zh','code':1, 'site': 'http://sanm-zh.github.io'}
+ 
+ 
+print (dict['one'])       # 输出键为 'one' 的值
+print (dict[2])           # 输出键为 2 的值
+print (tinydict)          # 输出完整的字典
+print (tinydict.keys())   # 输出所有键
+print (tinydict.values()) # 输出所有值
+```
+以上实例输出结果：
+```
+1 - 张三
+2 - 李四
+{'name': 'runoob', 'code': 1, 'site': 'www.runoob.com'}
+dict_keys(['name', 'code', 'site'])
+dict_values(['sanm-zh', 1, 'http://sanm-zh.github.io'])
+```
+构造函数 dict() 可以直接从键值对序列中构建字典如下：
+
+实例
+```
+>>>dict([('github', 1), ('Google', 2), ('Taobao', 3)])
+{'Taobao': 3, 'github': 1, 'Google': 2}
+ 
+>>> {x: x**2 for x in (2, 4, 6)}
+{2: 4, 4: 16, 6: 36}
+ 
+>>> dict(github=1, Google=2, Taobao=3)
+{'github': 1, 'Google': 2, 'Taobao': 3}
+```
+另外，字典类型也有一些内置的函数，例如`clear()`、`keys()`、`values()`等。
+
+**注意**：
+
+- 1、字典是一种映射类型，它的元素是键值对。
+- 2、字典的关键字必须为不可变类型，且不能重复。
+- 3、创建空字典使用 { }。
+---
+### Python数据类型转换
+有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可。
+
+以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值。
+
+函数 | 描述
+--- | ---
+int(x [,base]) | 将x转换为一个整数
+float(x) | 将x转换到一个浮点数
+complex(real [,imag]) | 创建一个复数
+str(x) | 将对象 x 转换为字符串
+repr(x) | 将对象 x 转换为表达式字符串
+eval(str) | 用来计算在字符串中的有效Python表达式,并返回一个对象
+tuple(s) | 将序列 s 转换为一个元组
+list(s) | 将序列 s 转换为一个列表
+set(s) | 转换为可变集合
+dict(d) | 创建一个字典。d 必须是一个序列 (key,value)元组。
+frozenset(s) | 转换为不可变集合
+chr(x) | 将一个整数转换为一个字符
+ord(x) | 将一个字符转换为它的整数值
+hex(x) | 将一个整数转换为一个十六进制字符串
+oct(x) | 将一个整数转换为一个八进制字符串
