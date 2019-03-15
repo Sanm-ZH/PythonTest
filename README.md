@@ -51,3 +51,4 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 
 1. ##### [Python优缺点](/src/lesson00.synopsis/synopsis.md)
 2. ##### [Python 基础语法](/src/lesson01.basicSyntax/basicSyntax3.md)
+3. ##### [Python3 基本数据类型](/src/lesson02.dataType/dataType.md)
