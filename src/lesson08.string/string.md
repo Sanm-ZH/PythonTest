@@ -216,4 +216,10 @@ Python 的字符串常用内建函数如下：
 :---|:---
 1|**[capitalize()](/src/lesson08.string/string-capitalize.md)**<br> 将字符串的第一个字符转换为大写
 2|**[center(width, fillchar)()](/src/lesson08.string/string-center.md)**<br>返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。
-3|**[count(str, beg= 0,end=len(string))]()**<br>返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数
+3|**[count(str, beg= 0,end=len(string))](/src/lesson08.string/string-count.md)**<br>返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数
+4|**[bytes.decode(encoding="utf-8", errors="strict")](/src/lesson08.string/string-decode.md)**<br>Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回。
+5|**[encode(encoding='UTF-8',errors='strict')](/src/lesson08.string/string-encode.md)**<br>以 encoding 指定的编码格式编码字符串，如果出错默认报一个ValueError 的异常，除非 errors 指定的是'ignore'或者'replace'
+6|**[endswith(suffix, beg=0, end=len(string))](/src/lesson08.string/string-endswith.md)**<br>检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.
+7|**[expandtabs(tabsize=8)](/src/lesson08.string/string-expandtabs.md)**<br>把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8 。
+8|**[find(str, beg=0 end=len(string))](/src/lesson08.string/string-find.md)**<br>检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1
+9|**[index(str, beg=0, end=len(string))](/src/lesson08.string/string-index.md)**<br>跟find()方法一样，只不过如果str不在字符串中会报一个异常.
