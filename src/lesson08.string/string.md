@@ -215,3 +215,5 @@ Python 的字符串常用内建函数如下：
 序号|方法及描述
 :---|:---
 1|**[capitalize()](/src/lesson08.string/string-capitalize.md)**<br> 将字符串的第一个字符转换为大写
+2|**[center(width, fillchar)()](/src/lesson08.string/string-center.md)**<br>返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。
+3|**[count(str, beg= 0,end=len(string))]()**<br>返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数
