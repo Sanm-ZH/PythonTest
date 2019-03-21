@@ -59,3 +59,4 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 8. ##### [Python3 列表](/src/lesson09.list/list.md)
 9. ##### [Python3 元组](/src/lesson10.tuple/tuple.md)
 10. ##### [Python3 字典](/src/lesson11.dictionary/dictionary.md)
+11. ##### [Python3 集合](/src/lesson12.set/set.md)
