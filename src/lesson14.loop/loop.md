@@ -271,7 +271,7 @@ Good bye!
 #!/usr/bin/python3
  
 for letter in 'github':     # 第一个实例
-   if letter == 'o':        # 字母为 o 时跳过输出
+   if letter == 't':        # 字母为 o 时跳过输出
       continue
    print ('当前字母 :', letter)
  
@@ -287,7 +287,6 @@ print ("Good bye!")
 ```
 当前字母 : g
 当前字母 : i
-当前字母 : t
 当前字母 : h
 当前字母 : u
 当前字母 : b
@@ -355,7 +354,7 @@ pass 不做任何事情，一般用做占位语句，如下实例
 #!/usr/bin/python3
  
 for letter in 'github': 
-   if letter == 'o':
+   if letter == 't':
       pass
       print ('执行 pass 块')
    print ('当前字母 :', letter)
@@ -366,6 +365,7 @@ print ("Good bye!")
 ```
 当前字母 : g
 当前字母 : i
+执行 pass 块
 当前字母 : t
 当前字母 : h
 当前字母 : u
