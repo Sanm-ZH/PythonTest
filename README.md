@@ -64,3 +64,4 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 13. ##### [Python3 循环语句](/src/lesson14.loop/loop.md)
 14. ##### [Python3 迭代器与生成器](/src/lesson15.iteratorGenerator/iterator-generator.md)
 15. ##### [Python3 函数](/src/lesson16.function/function.md)
+16. ##### [Python3 数据结构](/src/lesson17.dataStructure/data-structure.md)
