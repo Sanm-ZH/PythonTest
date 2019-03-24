@@ -150,4 +150,226 @@ print("完成循环!")
 sanm-zh!
 完成循环!
 ```
+---
+#### range()函数
+如果你需要遍历数字序列，可以使用内置range()函数。它会生成数列，例如:
+
+##### 实例
+```
+>>>for i in range(5):
+...     print(i)
+...
+0
+1
+2
+3
+4
+```
+你也可以使用range指定区间的值：
+
+##### 实例
+````
+>>>for i in range(5,9) :
+    print(i)
+ 
+    
+5
+6
+7
+8
+>>>
+````
+也可以使range以指定数字开始并指定不同的增量(甚至可以是负数，有时这也叫做'步长'):
+
+##### 实例
+```
+>>>for i in range(0, 10, 3) :
+    print(i)
+ 
+    
+0
+3
+6
+9
+>>>
+```
+##### 负数：
+
+##### 实例
+```
+>>>for i in range(-10, -100, -30) :
+    print(i)
+ 
+    
+-10
+-40
+-70
+>>>
+```
+您可以结合range()和len()函数以遍历一个序列的索引,如下所示:
+
+##### 实例
+```
+>>>a = ['Google', 'Baidu', 'github', 'Taobao', 'QQ']
+>>> for i in range(len(a)):
+...     print(i, a[i])
+... 
+0 Google
+1 Baidu
+2 github
+3 Taobao
+4 QQ
+>>>
+```
+还可以使用range()函数来创建一个列表：
+
+##### 实例
+```
+>>>list(range(5))
+[0, 1, 2, 3, 4]
+>>>
+```
+break和continue语句及循环中的else子句
+break 语句可以跳出 for 和 while 的循环体。如果你从 for 或 while 循环中终止，任何对应的循环 else 块将不执行。 实例如下：
+
+##### 实例
+```python
+#!/usr/bin/python3
+ 
+for letter in 'github':     # 第一个实例
+   if letter == 'b':
+      break
+   print ('当前字母为 :', letter)
+  
+var = 10                    # 第二个实例
+while var > 0:              
+   print ('当期变量值为 :', var)
+   var = var -1
+   if var == 5:
+      break
+ 
+print ("Good bye!")
+```
+执行以上脚本输出结果为：
+```
+当前字母为 : g
+当前字母为 : i
+当前字母为 : t
+当前字母为 : h
+当前字母为 : u
+当期变量值为 : 10
+当期变量值为 : 9
+当期变量值为 : 8
+当期变量值为 : 7
+当期变量值为 : 6
+Good bye!
+```
+**continue**语句被用来告诉Python跳过当前循环块中的剩余语句，然后继续进行下一轮循环。
+
+##### 实例
+```python
+#!/usr/bin/python3
+ 
+for letter in 'github':     # 第一个实例
+   if letter == 'o':        # 字母为 o 时跳过输出
+      continue
+   print ('当前字母 :', letter)
+ 
+var = 10                    # 第二个实例
+while var > 0:              
+   var = var -1
+   if var == 5:             # 变量为 5 时跳过输出
+      continue
+   print ('当前变量值 :', var)
+print ("Good bye!")
+```
+执行以上脚本输出结果为：
+```
+当前字母 : g
+当前字母 : i
+当前字母 : t
+当前字母 : h
+当前字母 : u
+当前字母 : b
+当前变量值 : 9
+当前变量值 : 8
+当前变量值 : 7
+当前变量值 : 6
+当前变量值 : 4
+当前变量值 : 3
+当前变量值 : 2
+当前变量值 : 1
+当前变量值 : 0
+Good bye!
+```
+循环语句可以有 else 子句，它在穷尽列表(以for循环)或条件变为 false (以while循环)导致循环终止时被执行,但循环被break终止时不执行。
+
+如下实例用于查询质数的循环例子:
+
+##### 实例
+```python
+#!/usr/bin/python3
+ 
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, '等于', x, '*', n//x)
+            break
+    else:
+        # 循环中没有找到元素
+        print(n, ' 是质数')
+```
+执行以上脚本输出结果为：
+```
+2  是质数
+3  是质数
+4 等于 2 * 2
+5  是质数
+6 等于 2 * 3
+7  是质数
+8 等于 2 * 4
+9 等于 3 * 3
+```
+---
+#### pass 语句
+Python pass是空语句，是为了保持程序结构的完整性。
+
+pass 不做任何事情，一般用做占位语句，如下实例
+
+##### 实例
+```
+>>>while True:
+...     pass  # 等待键盘中断 (Ctrl+C)
+```
+最小的类:
+
+##### 实例
+```
+>>>class MyEmptyClass:
+...     pass
+```
+以下实例在字母为 o 时 执行 pass 语句块:
+
+##### 实例
+```python
+#!/usr/bin/python3
+ 
+for letter in 'github': 
+   if letter == 'o':
+      pass
+      print ('执行 pass 块')
+   print ('当前字母 :', letter)
+ 
+print ("Good bye!")
+```
+执行以上脚本输出结果为：
+```
+当前字母 : g
+当前字母 : i
+当前字母 : t
+当前字母 : h
+当前字母 : u
+当前字母 : b
+Good bye!
+```
 
