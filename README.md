@@ -63,3 +63,4 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 12. ##### [Python3 条件控制](/src/lesson13.conditionalStatement/conditional-statements.md)
 13. ##### [Python3 循环语句](/src/lesson14.loop/loop.md)
 14. ##### [Python3 迭代器与生成器](/src/lesson15.iteratorGenerator/iterator-generator.md)
+15. ##### [Python3 函数](/src/lesson16.function/function.md)
