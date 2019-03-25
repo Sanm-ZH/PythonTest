@@ -408,11 +408,11 @@ pickle.dump(obj, file, [,protocol])
 ```
 x = pickle.load(file)
 ```
-注解：从 file 中读取一个字符串，并将它重构为原来的python对象。
+**注解**：从 file 中读取一个字符串，并将它重构为原来的python对象。
 
-file: 类文件对象，有read()和readline()接口。
+**file**: 类文件对象，有read()和readline()接口。
 
-实例1：
+##### 实例1：
 ```python
 #!/usr/bin/python3
 import pickle
@@ -435,7 +435,7 @@ pickle.dump(selfref_list, output, -1)
 
 output.close()
 ```
-实例2：
+##### 实例2：
 ```python
 #!/usr/bin/python3
 import pprint, pickle
