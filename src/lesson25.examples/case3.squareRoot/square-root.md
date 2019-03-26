@@ -46,3 +46,16 @@ $ python test.py
 
 ---
 [Python3 实例](/src/lesson25.examples/examples.md)
+
+---
+#### 求复数的平方根。
+```python
+#!/usr/bin/python3
+
+import cmath
+
+a = float(input("请输入一个实数字: "))
+b = float(input("请输入一个虚数字: "))
+num_sqrt = cmath.sqrt(complex(a, b))
+print('{0:0.3f}+ {1:0.3f}j 8的平方根为 {2:0.3f}+{3:0.3f}j'.format(a, b, num_sqrt.real, num_sqrt.imag))
+```

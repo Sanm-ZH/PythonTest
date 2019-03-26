@@ -1,8 +1,8 @@
 [Python3 实例](/src/lesson25.examples/examples.md)
 ### Python 二次方程
 以下实例为通过用户输入数字，并计算二次方程：
-```python
 #### 实例
+```python
 # 二次方程式 ax**2 + bx + c = 0
 # a、b、c 用户提供，为实数，a ≠ 0
  
