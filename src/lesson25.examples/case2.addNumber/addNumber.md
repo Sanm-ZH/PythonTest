@@ -1,5 +1,5 @@
+[Python3 实例](/src/lesson25.examples/examples.md)
 ### Python 数字求和
-Document 对象参考手册 Python3 实例
 
 以下实例为通过用户输入两个数字，并计算两个数字之和：
 
@@ -42,3 +42,5 @@ $ python test.py
 输入第二个数字：2.5
 两数之和为 4.0
 ```
+---
+[Python3 实例](/src/lesson25.examples/examples.md)
