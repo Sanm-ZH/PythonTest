@@ -4,7 +4,7 @@
 - [Python Hello World 实例](/src/lesson25.examples/case1.helloworld/helloworld.md)
 - [Python 数字求和](/src/lesson25.examples/case2.addNumber/addNumber.md)
 - [Python 平方根](/src/lesson25.examples/case3.squareRoot/square-root.md)
-- Python 二次方程
+- [Python 二次方程](/src/lesson25.examples/case4.quadratic-root/quadratic.md)
 - Python 计算三角形的面积
 - Python 随机数生成
 - Python 摄氏温度转华氏温度
