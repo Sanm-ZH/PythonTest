@@ -7,7 +7,7 @@
 - [Python 二次方程](/src/lesson25.examples/case4.quadratic-root/quadratic.md)
 - [Python 计算三角形的面积](/src/lesson25.examples/case5.areaTriangle/area-triangle.md)
 - [Python 随机数生成](/src/lesson25.examples/case6.random/random.md)
-- Python 摄氏温度转华氏温度
+- [Python 摄氏温度转华氏温度](/src/lesson25.examples/case7.celsiusFhrenheit/celsius-fahrenheit.md)
 - Python 交换变量
 - Python if 语句
 - Python 判断字符串是否为数字
