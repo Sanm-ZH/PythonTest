@@ -9,7 +9,7 @@
 - [Python 随机数生成](/src/lesson25.examples/case6.random/random.md)
 - [Python 摄氏温度转华氏温度](/src/lesson25.examples/case7.celsiusFhrenheit/celsius-fahrenheit.md)
 - [Python 交换变量](/src/lesson25.examples/case8.swapVariables/swap-variables.md)
-- Python if 语句
+- Python [if 语句](/src/lesson25.examples/case9.ifExamples/if-examples.md)
 - Python 判断字符串是否为数字
 - Python 判断奇数偶数
 - Python 判断闰年
