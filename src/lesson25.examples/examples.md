@@ -15,7 +15,7 @@
 - [Python 判断闰年](/src/lesson25.examples/case12.leapYear/leap-year.md)
 - [Python 获取最大值函数](/src/lesson25.examples/case13.largestNumber/largest-number.md)
 - [Python 质数判断](/src/lesson25.examples/case14.primeNumber/prime-number.md)
-- Python 输出指定范围内的素数
+- [Python 输出指定范围内的素数](/src/lesson25.examples/case15.primeNumberIntervals/prime-number-intervals.md)
 - Python 阶乘实例
 - Python 九九乘法表
 - Python 斐波那契数列
