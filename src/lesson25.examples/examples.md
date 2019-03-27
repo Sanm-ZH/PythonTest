@@ -12,7 +12,7 @@
 - [Python if 语句](/src/lesson25.examples/case9.ifExamples/if-examples.md)
 - [Python 判断字符串是否为数字](/src/lesson25.examples/case10.checkIsNumber/check-is-number.md)
 - [Python 判断奇数偶数](/src/lesson25.examples/case11.oddEven/odd-even.md)
-- Python 判断闰年
+- [Python 判断闰年](/src/lesson25.examples/case12.leapYear/leap-year.md)
 - Python 获取最大值函数
 - Python 质数判断
 - Python 输出指定范围内的素数
