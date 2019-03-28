@@ -19,7 +19,7 @@
 - [Python 阶乘实例](/src/lesson25.examples/lesson16.factorial/factorial.md)
 - [Python 九九乘法表](/src/lesson25.examples/lesson17.99Table/99-table.md)
 - [Python 斐波那契数列](/src/lesson25.examples/lesson18.fibonacciSequence/fibonacci-sequence.md)
-- Python 阿姆斯特朗数
+- [Python 阿姆斯特朗数](/src/lesson25.examples/lesson19.armstrongNumber/armstrong-number.py)
 - Python 十进制转二进制、八进制、十六进制
 - Python ASCII码与字符相互转换
 - Python 最大公约数算法
