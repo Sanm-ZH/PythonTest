@@ -6,7 +6,6 @@ def recur_fibo(n):
     else:
         return (recur_fibo(n - 1) + recur_fibo(n - 2))
 
-
 # 获取用户输入
 nterms = int(input("您要输出几项? "))
 
