@@ -25,7 +25,7 @@
 - [Python 最大公约数算法](/src/lesson25.examples/lesson22.hcf/hcf.md)
 - [Python 最小公倍数算法](/src/lesson25.examples/lesson23.lcm/lcm.md)
 - [Python 简单计算器实现](/src/lesson25.examples/lesson24.calculator/calculator.md)
-- Python 生成日历
+- [Python 生成日历](/src/lesson25.examples/lesson25.calendar/calendar.md)
 - Python 使用递归斐波那契数列
 - Python 文件 IO
 - Python 字符串判断
