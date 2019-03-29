@@ -26,7 +26,7 @@
 - [Python 最小公倍数算法](/src/lesson25.examples/lesson23.lcm/lcm.md)
 - [Python 简单计算器实现](/src/lesson25.examples/lesson24.calculator/calculator.md)
 - [Python 生成日历](/src/lesson25.examples/lesson25.calendar/calendar.md)
-- Python 使用递归斐波那契数列
+- [Python 使用递归斐波那契数列](/src/lesson25.examples/lesson26.fibonacciRecursion/fibonacci-recursion.md)
 - Python 文件 IO
 - Python 字符串判断
 - Python 字符串大小写转换
