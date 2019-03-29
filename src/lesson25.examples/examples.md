@@ -20,7 +20,7 @@
 - [Python 九九乘法表](/src/lesson25.examples/lesson17.99Table/99-table.md)
 - [Python 斐波那契数列](/src/lesson25.examples/lesson18.fibonacciSequence/fibonacci-sequence.md)
 - [Python 阿姆斯特朗数](/src/lesson25.examples/lesson19.armstrongNumber/armstrong-number.py)
-- Python 十进制转二进制、八进制、十六进制
+- [Python 十进制转二进制、八进制、十六进制](/src/lesson25.examples/lesson20.conversionBinaryOctalHexadecimal/conversion-binary-octal-hexadecimal.md)
 - Python ASCII码与字符相互转换
 - Python 最大公约数算法
 - Python 最小公倍数算法
