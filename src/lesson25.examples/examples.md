@@ -29,7 +29,7 @@
 - [Python 使用递归斐波那契数列](/src/lesson25.examples/case26.fibonacciRecursion/fibonacci-recursion.md)
 - [Python 文件 IO](/src/lesson25.examples/case27.fileIO/file-io.md)
 - [Python 字符串判断](/src/lesson25.examples/case28.checkString/check-string.md)
-- Python 字符串大小写转换
+- [Python 字符串大小写转换](/src/lesson25.examples/case29.upperLower/upper-lower.md)
 - Python 计算每个月天数
 - Python 获取昨天日期
 - Python list 常用操作
