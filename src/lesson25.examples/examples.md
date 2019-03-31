@@ -32,6 +32,6 @@
 - [Python 字符串大小写转换](/src/lesson25.examples/case29.upperLower/upper-lower.md)
 - [Python 计算每个月天数](/src/lesson25.examples/case30.monthDays/month-days.md)
 - [Python 获取昨天日期](/src/lesson25.examples/case31.getYesterday/get-yesterday.md)
-- Python list 常用操作
+- [Python list 常用操作](/src/lesson25.examples/case32.listOperator/list-operator.md)
 - Python 约瑟夫生者死者小游戏
 - Python 实现秒表功能
