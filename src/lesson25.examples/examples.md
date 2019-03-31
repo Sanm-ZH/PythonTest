@@ -30,7 +30,7 @@
 - [Python 文件 IO](/src/lesson25.examples/case27.fileIO/file-io.md)
 - [Python 字符串判断](/src/lesson25.examples/case28.checkString/check-string.md)
 - [Python 字符串大小写转换](/src/lesson25.examples/case29.upperLower/upper-lower.md)
-- Python 计算每个月天数
+- [Python 计算每个月天数](/src/lesson25.examples/case30.monthDays/month-days.md)
 - Python 获取昨天日期
 - Python list 常用操作
 - Python 约瑟夫生者死者小游戏
