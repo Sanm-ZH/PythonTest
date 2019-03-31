@@ -33,5 +33,5 @@
 - [Python 计算每个月天数](/src/lesson25.examples/case30.monthDays/month-days.md)
 - [Python 获取昨天日期](/src/lesson25.examples/case31.getYesterday/get-yesterday.md)
 - [Python list 常用操作](/src/lesson25.examples/case32.listOperator/list-operator.md)
-- Python 约瑟夫生者死者小游戏
+- [Python 约瑟夫生者死者小游戏](/src/lesson25.examples/case33.josephLifeDeadGame/joseph-life-dead-game.md)
 - Python 实现秒表功能
