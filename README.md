@@ -73,3 +73,6 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 22. ##### [Python3 面向对象](/src/lesson23.class/class.md)
 23. ##### [Python3 标准库概念](/src/lesson24.stdlib/stdlib.md)
 24. ##### [Python3 实例](/src/lesson25.examples/examples.md)
+
+#### 高级部分
+1. ##### [正则表达式](/src/lesson26.regExpressions/reg-expressions.md)
