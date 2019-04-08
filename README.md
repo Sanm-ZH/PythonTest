@@ -76,3 +76,4 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 
 #### 高级部分
 1. ##### [正则表达式](/src/lesson26.regExpressions/reg-expressions.md)
+2. ##### [CGI 编程](/src/lesson27.CGI/cgi-test.md)
