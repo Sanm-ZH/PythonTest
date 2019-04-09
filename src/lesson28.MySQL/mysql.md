@@ -78,3 +78,72 @@ mydb = mysql.connector.connect(
   database="runoob_db"
 )
 ```
+---
+#### 创建数据表
+创建数据表使用 "CREATE TABLE" 语句，创建数据表前，需要确保数据库已存在，以下创建一个名为 sites 的数据表：
+```python
+# demo_mysql_test.py
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="runoob_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("CREATE TABLE sites (name VARCHAR(255), url VARCHAR(255))")
+```
+我们也可以使用 "SHOW TABLES" 语句来查看数据表是否已存在：
+```python
+# demo_mysql_test.py
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="runoob_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("SHOW TABLES")
+ 
+for x in mycursor:
+  print(x)
+```
+#### 主键设置
+创建表的时候我们一般都会设置一个主键（PRIMARY KEY），我们可以使用 "INT AUTO_INCREMENT PRIMARY KEY" 语句来创建一个主键，主键起始值为 1，逐步递增。
+
+如果我们的表已经创建，我们需要使用 ALTER TABLE 来给表添加主键：
+```python
+# demo_mysql_test.py
+
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="runoob_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("ALTER TABLE sites ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY")
+```
+如果你还未创建 sites 表，可以直接使用以下代码创建。
+```python
+# demo_mysql_test.py
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="runoob_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("CREATE TABLE sites (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), url VARCHAR(255))")
+```
