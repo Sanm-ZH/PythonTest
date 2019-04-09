@@ -9,7 +9,6 @@ python -m pip install mysql-connector
 ```
 使用以下代码测试 mysql-connector 是否安装成功：
 ```python
-# demo_mysql_test.py
 import mysql.connector
 ```
 执行以上代码，如果没有产生错误，表明安装成功。
@@ -18,8 +17,6 @@ import mysql.connector
 #### 创建数据库连接
 可以使用以下代码来连接数据库：
 ```python
-# demo_mysql_test.py
-
 import mysql.connector
  
 mydb = mysql.connector.connect(
@@ -31,9 +28,8 @@ mydb = mysql.connector.connect(
 print(mydb)
 ```
 #### 创建数据库
-创建数据库使用 "CREATE DATABASE" 语句，以下创建一个名为 runoob_db 的数据库：
+创建数据库使用 "CREATE DATABASE" 语句，以下创建一个名为 baidu_db 的数据库：
 ```python
-# demo_mysql_test.py
 import mysql.connector
  
 mydb = mysql.connector.connect(
@@ -44,11 +40,10 @@ mydb = mysql.connector.connect(
  
 mycursor = mydb.cursor()
  
-mycursor.execute("CREATE DATABASE runoob_db")
+mycursor.execute("CREATE DATABASE baidu_db")
 ```
 创建数据库前我们也可以使用 "SHOW DATABASES" 语句来查看数据库是否存在：
 ```python
-# demo_mysql_test.py
 # 输出所有数据库列表：
 
 import mysql.connector
@@ -68,28 +63,26 @@ for x in mycursor:
 ```
 或者我们可以直接连接数据库，如果数据库不存在，会输出错误信息：
 ```python
-# demo_mysql_test.py
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 ```
 ---
 #### 创建数据表
 创建数据表使用 "CREATE TABLE" 语句，创建数据表前，需要确保数据库已存在，以下创建一个名为 sites 的数据表：
 ```python
-# demo_mysql_test.py
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 mycursor = mydb.cursor()
  
@@ -97,14 +90,13 @@ mycursor.execute("CREATE TABLE sites (name VARCHAR(255), url VARCHAR(255))")
 ```
 我们也可以使用 "SHOW TABLES" 语句来查看数据表是否已存在：
 ```python
-# demo_mysql_test.py
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 mycursor = mydb.cursor()
  
@@ -118,15 +110,13 @@ for x in mycursor:
 
 如果我们的表已经创建，我们需要使用 ALTER TABLE 来给表添加主键：
 ```python
-# demo_mysql_test.py
-
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 mycursor = mydb.cursor()
  
@@ -134,14 +124,13 @@ mycursor.execute("ALTER TABLE sites ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY
 ```
 如果你还未创建 sites 表，可以直接使用以下代码创建。
 ```python
-# demo_mysql_test.py
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 mycursor = mydb.cursor()
  
@@ -151,20 +140,18 @@ mycursor.execute("CREATE TABLE sites (id INT AUTO_INCREMENT PRIMARY KEY, name VA
 #### 插入数据
 插入数据使用 "INSERT INTO" 语句：
 ```python
-# demo_mysql_test.py
-
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 mycursor = mydb.cursor()
  
 sql = "INSERT INTO sites (name, url) VALUES (%s, %s)"
-val = ("RUNOOB", "https://www.runoob.com")
+val = ("baidu", "https://www.baidu.com")
 mycursor.execute(sql, val)
  
 mydb.commit()    # 数据表内容有更新，必须使用到该语句
@@ -178,15 +165,13 @@ print(mycursor.rowcount, "记录插入成功。")
 #### 批量插入
 批量插入使用 executemany() 方法，该方法的第二个参数是一个元组列表，包含了我们要插入的数据：
 ```python
-# demo_mysql_test.py
-
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 mycursor = mydb.cursor()
  
@@ -210,14 +195,13 @@ print(mycursor.rowcount, "记录插入成功。")
 ```
 如果我们想在数据记录插入后，获取该记录的 ID ，可以使用以下代码：
 ```python
-# demo_mysql_test.py
 import mysql.connector
  
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   passwd="123456",
-  database="runoob_db"
+  database="baidu_db"
 )
 mycursor = mydb.cursor()
  
@@ -234,3 +218,407 @@ print("1 条记录已插入, ID:", mycursor.lastrowid)
 1 条记录已插入, ID: 6
 ```
 ---
+#### 查询数据
+查询数据使用 SELECT 语句：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("SELECT * FROM sites")
+ 
+myresult = mycursor.fetchall()     # fetchall() 获取所有记录
+ 
+for x in myresult:
+  print(x)
+执行代码，输出结果为：
+
+(1, 'baidu', 'https://www.baidu.com')
+(2, 'Google', 'https://www.google.com')
+(3, 'Github', 'https://www.github.com')
+(4, 'Taobao', 'https://www.taobao.com')
+(5, 'stackoverflow', 'https://www.stackoverflow.com/')
+(6, 'Zhihu', 'https://www.zhihu.com')
+```
+也可以读取指定的字段数据：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("SELECT name, url FROM sites")
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+执行代码，输出结果为：
+
+```
+('baidu', 'https://www.baidu.com')
+('Google', 'https://www.google.com')
+('Github', 'https://www.github.com')
+('Taobao', 'https://www.taobao.com')
+('stackoverflow', 'https://www.stackoverflow.com/')
+('Zhihu', 'https://www.zhihu.com')
+```
+如果我们只想读取一条数据，可以使用 fetchone() 方法：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("SELECT * FROM sites")
+ 
+myresult = mycursor.fetchone()
+ 
+print(myresult)
+```
+执行代码，输出结果为：
+```
+(1, 'baidu', 'https://www.baidu.com')
+```
+#### where 条件语句
+如果我们要读取指定条件的数据，可以使用 where 语句：
+
+读取 name 字段为 baidu 的记录：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "SELECT * FROM sites WHERE name ='baidu'"
+ 
+mycursor.execute(sql)
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+执行代码，输出结果为：
+```
+(1, 'baidu', 'https://www.baidu.com')
+```
+也可以使用通配符 %：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "SELECT * FROM sites WHERE url LIKE '%oo%'"
+ 
+mycursor.execute(sql)
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+执行代码，输出结果为：
+```
+(1, 'baidu', 'https://www.baidu.com')
+(2, 'Google', 'https://www.google.com')
+```
+为了防止数据库查询发生 SQL 注入的攻击，我们可以使用 %s 占位符来转义查询的条件：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "SELECT * FROM sites WHERE name = %s"
+na = ("baidu", )
+ 
+mycursor.execute(sql, na)
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+#### 排序
+查询结果排序可以使用 ORDER BY 语句，默认的排序方式为升序，关键字为 ASC，如果要设置降序排序，可以设置关键字 DESC。
+
+按 name 字段字母的升序排序：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "SELECT * FROM sites ORDER BY name"
+ 
+mycursor.execute(sql)
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+
+执行代码，输出结果为：
+```
+(3, 'Github', 'https://www.github.com')
+(2, 'Google', 'https://www.google.com')
+(1, 'baidu', 'https://www.baidu.com')
+(5, 'stackoverflow', 'https://www.stackoverflow.com/')
+(4, 'Taobao', 'https://www.taobao.com')
+(6, 'Zhihu', 'https://www.zhihu.com')
+```
+降序排序实例：
+
+按 name 字段字母的降序排序：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "SELECT * FROM sites ORDER BY name DESC"
+ 
+mycursor.execute(sql)
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+执行代码，输出结果为：
+```
+(6, 'Zhihu', 'https://www.zhihu.com')
+(4, 'Taobao', 'https://www.taobao.com')
+(5, 'stackoverflow', 'https://www.stackoverflow.com/')
+(1, 'baidu', 'https://www.baidu.com')
+(2, 'Google', 'https://www.google.com')
+(3, 'Github', 'https://www.github.com')
+```
+#### Limit
+如果我们要设置查询的数据量，可以通过 "LIMIT" 语句来指定
+
+读取前 3 条记录：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("SELECT * FROM sites LIMIT 3")
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+执行代码，输出结果为：
+```
+(1, 'baidu', 'https://www.baidu.com')
+(2, 'Google', 'https://www.google.com')
+(3, 'Github', 'https://www.github.com')
+```
+也可以指定起始位置，使用的关键字是 OFFSET：
+
+从第二条开始读取前 3 条记录：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+mycursor.execute("SELECT * FROM sites LIMIT 3 OFFSET 1")  # 0 为 第一条，1 为第二条，以此类推
+ 
+myresult = mycursor.fetchall()
+ 
+for x in myresult:
+  print(x)
+```
+执行代码，输出结果为：
+```
+(2, 'Google', 'https://www.google.com')
+(3, 'Github', 'https://www.github.com')
+(4, 'Taobao', 'https://www.taobao.com')
+```
+---
+#### 删除记录
+删除记录使用 "DELETE FROM" 语句：
+
+删除 name 为 stackoverflow 的记录：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "DELETE FROM sites WHERE name = 'stackoverflow'"
+ 
+mycursor.execute(sql)
+ 
+mydb.commit()
+ 
+print(mycursor.rowcount, " 条记录删除")
+```
+执行代码，输出结果为：
+```
+1  条记录删除
+```
+注意：要慎重使用删除语句，删除语句要确保指定了 WHERE 条件语句，否则会导致整表数据被删除。
+
+为了防止数据库查询发生 SQL 注入的攻击，我们可以使用 %s 占位符来转义删除语句的条件：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "DELETE FROM sites WHERE name = %s"
+na = ("stackoverflow", )
+ 
+mycursor.execute(sql, na)
+ 
+mydb.commit()
+ 
+print(mycursor.rowcount, " 条记录删除")
+```
+执行代码，输出结果为：
+```
+1  条记录删除
+```
+---
+#### 更新表数据
+数据表更新使用 "UPDATE" 语句：
+
+将 name 为 Zhihu 的字段数据改为 ZH：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "UPDATE sites SET name = 'ZH' WHERE name = 'Zhihu'"
+ 
+mycursor.execute(sql)
+ 
+mydb.commit()
+ 
+print(mycursor.rowcount, " 条记录被修改")
+```
+执行代码，输出结果为：
+```
+1  条记录被修改
+```
+注意：UPDATE 语句要确保指定了 WHERE 条件语句，否则会导致整表数据被更新。
+
+为了防止数据库查询发生 SQL 注入的攻击，我们可以使用 %s 占位符来转义更新语句的条件：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "UPDATE sites SET name = %s WHERE name = %s"
+val = ("Zhihu", "ZH")
+ 
+mycursor.execute(sql, val)
+ 
+mydb.commit()
+ 
+print(mycursor.rowcount, " 条记录被修改")
+```
+执行代码，输出结果为：
+```
+1  条记录被修改
+```
+---
+#### 删除表
+删除表使用 "DROP TABLE" 语句， IF EXISTS 关键字是用于判断表是否存在，只有在存在的情况才删除：
+```python
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="baidu_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "DROP TABLE IF EXISTS sites"  # 删除数据表 sites
+mycursor.execute(sql)
+```
+ 
