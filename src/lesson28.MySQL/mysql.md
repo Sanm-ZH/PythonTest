@@ -147,3 +147,90 @@ mycursor = mydb.cursor()
  
 mycursor.execute("CREATE TABLE sites (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), url VARCHAR(255))")
 ```
+---
+#### 插入数据
+插入数据使用 "INSERT INTO" 语句：
+```python
+# demo_mysql_test.py
+
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="runoob_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "INSERT INTO sites (name, url) VALUES (%s, %s)"
+val = ("RUNOOB", "https://www.runoob.com")
+mycursor.execute(sql, val)
+ 
+mydb.commit()    # 数据表内容有更新，必须使用到该语句
+ 
+print(mycursor.rowcount, "记录插入成功。")
+```
+执行代码，输出结果为：
+```
+1 记录插入成功
+```
+#### 批量插入
+批量插入使用 executemany() 方法，该方法的第二个参数是一个元组列表，包含了我们要插入的数据：
+```python
+# demo_mysql_test.py
+
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="runoob_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "INSERT INTO sites (name, url) VALUES (%s, %s)"
+val = [
+  ('Google', 'https://www.google.com'),
+  ('Github', 'https://www.github.com'),
+  ('Taobao', 'https://www.taobao.com'),
+  ('stackoverflow', 'https://www.stackoverflow.com/')
+]
+ 
+mycursor.executemany(sql, val)
+ 
+mydb.commit()    # 数据表内容有更新，必须使用到该语句
+ 
+print(mycursor.rowcount, "记录插入成功。")
+```
+执行代码，输出结果为：
+```
+4 记录插入成功。
+```
+如果我们想在数据记录插入后，获取该记录的 ID ，可以使用以下代码：
+```python
+# demo_mysql_test.py
+import mysql.connector
+ 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  passwd="123456",
+  database="runoob_db"
+)
+mycursor = mydb.cursor()
+ 
+sql = "INSERT INTO sites (name, url) VALUES (%s, %s)"
+val = ("Zhihu", "https://www.zhihu.com")
+mycursor.execute(sql, val)
+ 
+mydb.commit()
+ 
+print("1 条记录已插入, ID:", mycursor.lastrowid)
+```
+执行代码，输出结果为：
+```
+1 条记录已插入, ID: 6
+```
+---
