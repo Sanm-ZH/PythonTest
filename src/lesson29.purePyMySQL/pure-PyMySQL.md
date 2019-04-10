@@ -225,3 +225,61 @@ db.close()
 ```
 fname=Mac, lname=Mohan, age=20, sex=M, income=2000
 ```
+---
+#### 数据库更新操作
+更新操作用于更新数据表的的数据，以下实例将 TESTDB 表中 SEX 为 'M' 的 AGE 字段递增 1：
+```python
+
+#!/usr/bin/python3
+ 
+import pymysql
+ 
+# 打开数据库连接
+db = pymysql.connect("localhost","testuser","test123","TESTDB" )
+ 
+# 使用cursor()方法获取操作游标 
+cursor = db.cursor()
+ 
+# SQL 更新语句
+sql = "UPDATE EMPLOYEE SET AGE = AGE + 1 WHERE SEX = '%c'" % ('M')
+try:
+   # 执行SQL语句
+   cursor.execute(sql)
+   # 提交到数据库执行
+   db.commit()
+except:
+   # 发生错误时回滚
+   db.rollback()
+ 
+# 关闭数据库连接
+db.close()
+```
+---
+#### 删除操作
+删除操作用于删除数据表中的数据，以下实例演示了删除数据表 EMPLOYEE 中 AGE 大于 20 的所有数据：
+```python
+#!/usr/bin/python3
+ 
+import pymysql
+ 
+# 打开数据库连接
+db = pymysql.connect("localhost","testuser","test123","TESTDB" )
+ 
+# 使用cursor()方法获取操作游标 
+cursor = db.cursor()
+ 
+# SQL 删除语句
+sql = "DELETE FROM EMPLOYEE WHERE AGE > %s" % (20)
+try:
+   # 执行SQL语句
+   cursor.execute(sql)
+   # 提交修改
+   db.commit()
+except:
+   # 发生错误时回滚
+   db.rollback()
+ 
+# 关闭连接
+db.close()
+```
+---
