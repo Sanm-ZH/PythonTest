@@ -80,3 +80,4 @@ Python 本身也是由诸多其他语言发展而来的,这包括 ABC、Modula-3
 3. ##### [Python MySQLDB](/src/lesson28.MySQL/mysql.md)
 4. ##### [Python PhMySQL](/src/lesson29.purePyMySQL/pure-PyMySQL.md)
 5. ##### [Python3 网络编程](/src/lesson30.socket/socket.md)
+6. ##### [Python3 SMTP发送邮件](/src/lesson31.smtp/smtp.md)
