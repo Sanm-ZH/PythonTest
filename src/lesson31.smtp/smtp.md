@@ -287,3 +287,43 @@ else:
 $ python test.py 
 邮件发送成功
 ```
+更多内容请参阅：[https://docs.python.org/3/library/email-examples.html](https://docs.python.org/3/library/email-examples.html)。
+
+---
+```
+message['From'] = Header("xxxxx@163.com", 'utf-8')
+message['To'] = Header("xxxxx@qq.com,xxxxx@qq.com", 'utf-8')
+smtpObj.sendmail("xxxxx@163.com", ["xxxxx@qq.com","xxxxx@qq.com"], message.as_string())
+```
+**注意点**：
+
+From、To 要与 sendmail 中的前两个参数保持一致
+
+To 多个邮箱用逗号隔开，sendmail 中的第二个参数要用 list
+```
+subject = 'Python SMTP 邮件测试'
+message['Subject'] = Header(subject, 'utf-8')
+```
+**注意点**：subject 中不能含有 "test" 关键字，否则会被视为垃圾邮件
+```
+smtpObj.login(mail_user,mail_pass)
+```
+**注意点**: 如果使用授权码登录第三方邮件客户端，则此处的密码(mail_pass)使用授权码
+
+---
+在发送带附件的邮件的时候，例程中有一行代码如下：
+```
+att1 = MIMEText(open('test.txt', 'rb').read(), 'base64', 'utf-8')
+```
+这里的 test.txt 必须是在当前的工作目录下的，所以要时想发送这个附件，需要将这个附件移动到工作目录下。
+
+或者还有一种方法就是，指定文件的路径：
+```
+path='D:/test/test.txt'
+file=open(path,'rb')
+att1=MIMEText(file.read(),'base64','utf-8')
+```
+也可以直接写成如下形式：
+```
+att1=MIMEText(open('D:/test/test.txt', 'rb').read(),'base64','utf-8')
+```
