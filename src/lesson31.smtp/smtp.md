@@ -11,7 +11,7 @@ smtpObj = smtplib.SMTP( [host [, port [, local_hostname]]] )
 ```
 参数说明：
 
-- host: SMTP 服务器主机。 你可以指定主机的ip地址或者域名如:runoob.com，这个是可选参数。
+- host: SMTP 服务器主机。 你可以指定主机的ip地址或者域名如:github.com，这个是可选参数。
 - port: 如果你提供了 host 参数, 你需要指定 SMTP 服务使用的端口号，一般情况下SMTP端口号为25。
 - local_hostname: 如果SMTP在你的本机上，你只需要指定服务器地址为 localhost 即可。
 
@@ -36,12 +36,12 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
  
-sender = 'from@runoob.com'
+sender = 'from@github.com'
 receivers = ['429240967@qq.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
  
 # 三个参数：第一个为文本内容，第二个 plain 设置文本格式，第三个 utf-8 设置编码
 message = MIMEText('Python 邮件发送测试...', 'plain', 'utf-8')
-message['From'] = Header("菜鸟教程", 'utf-8')     # 发送者
+message['From'] = Header("sanm-zh", 'utf-8')     # 发送者
 message['To'] =  Header("测试", 'utf-8')          # 接收者
  
 subject = 'Python SMTP 邮件测试'
@@ -79,11 +79,11 @@ mail_user="XXXX"    #用户名
 mail_pass="XXXXXX"   #口令 
  
  
-sender = 'from@runoob.com'
+sender = 'from@github.com'
 receivers = ['429240967@qq.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
  
 message = MIMEText('Python 邮件发送测试...', 'plain', 'utf-8')
-message['From'] = Header("菜鸟教程", 'utf-8')
+message['From'] = Header("sanm-zh", 'utf-8')
 message['To'] =  Header("测试", 'utf-8')
  
 subject = 'Python SMTP 邮件测试'
@@ -111,15 +111,15 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
  
-sender = 'from@runoob.com'
+sender = 'from@github.com'
 receivers = ['429240967@qq.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
  
 mail_msg = """
 <p>Python 邮件发送测试...</p>
-<p><a href="http://www.runoob.com">这是一个链接</a></p>
+<p><a href="http://www.github.com">这是一个链接</a></p>
 """
 message = MIMEText(mail_msg, 'html', 'utf-8')
-message['From'] = Header("菜鸟教程", 'utf-8')
+message['From'] = Header("sanm-zh", 'utf-8')
 message['To'] =  Header("测试", 'utf-8')
  
 subject = 'Python SMTP 邮件测试'
@@ -134,6 +134,56 @@ except smtplib.SMTPException:
     print ("Error: 无法发送邮件")
 ```
 执行以上程序，如果你本机安装sendmail，就会输出：
+```
+$ python3 test.py 
+邮件发送成功
+```
+---
+#### Python 发送带附件的邮件
+发送带附件的邮件，首先要创建MIMEMultipart()实例，然后构造附件，如果有多个附件，可依次构造，最后利用smtplib.smtp发送。
+
+##### 实例
+```python
+#!/usr/bin/python3
+ 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.header import Header
+ 
+sender = 'from@github.com'
+receivers = ['429240967@qq.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+ 
+#创建一个带附件的实例
+message = MIMEMultipart()
+message['From'] = Header("菜鸟教程", 'utf-8')
+message['To'] =  Header("测试", 'utf-8')
+subject = 'Python SMTP 邮件测试'
+message['Subject'] = Header(subject, 'utf-8')
+ 
+#邮件正文内容
+message.attach(MIMEText('这是菜鸟教程Python 邮件发送测试……', 'plain', 'utf-8'))
+ 
+# 构造附件1，传送当前目录下的 test.txt 文件
+att1 = MIMEText(open('test.txt', 'rb').read(), 'base64', 'utf-8')
+att1["Content-Type"] = 'application/octet-stream'
+# 这里的filename可以任意写，写什么名字，邮件中显示什么名字
+att1["Content-Disposition"] = 'attachment; filename="test.txt"'
+message.attach(att1)
+ 
+# 构造附件2，传送当前目录下的 github.txt 文件
+att2 = MIMEText(open('github.txt', 'rb').read(), 'base64', 'utf-8')
+att2["Content-Type"] = 'application/octet-stream'
+att2["Content-Disposition"] = 'attachment; filename="github.txt"'
+message.attach(att2)
+ 
+try:
+    smtpObj = smtplib.SMTP('localhost')
+    smtpObj.sendmail(sender, receivers, message.as_string())
+    print ("邮件发送成功")
+except smtplib.SMTPException:
+    print ("Error: 无法发送邮件")
+```
 ```
 $ python3 test.py 
 邮件发送成功
